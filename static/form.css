@@ -1,0 +1,152 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f2f2f2;
+    color: #333333;
+}
+
+/* Styles for Action Buttons */
+.action-button {
+    background-color: #5D6D7E;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.action-button:hover {
+    background-color: #7E8E98;
+}
+
+/* Styles for Download Button */
+.download-button {
+    background-color: #5D6D7E;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.download-button:hover {
+    background-color: #7E8E98;
+}
+
+/* Specific Styles for the Form */
+h1, h2, h3 {
+    text-align: left;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#statusContainer {
+    display: block;
+}
+
+#statusContainer label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Disable input field styles */
+input:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+form {
+            max-width: 100%;
+            margin: 20px 6px;
+            padding: 12px 10px 0px 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 98%;
+            padding: 7px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #5D6D7E;
+            color: #fff;
+            padding: 10px 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 8px;
+            margin-bottom:12px;
+            font-size: 13px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #7E8E98;
+        }
+
+        h1 {
+            color: #333;
+            padding-left: 12px;
+            margin-bottom: 3%;
+        }
+
+        /* Optional: Style the headings */
+        h2 {
+            padding-left: 15px;
+            margin-top: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            color: #333333;
+        }
+
+/* Styles for the popup message */
+.popup-message {
+    margin: 0;
+    padding 0px;
+    font-size: 16px;
+    color: #333333;
+    padding-bottom: 8px;
+}
+
+/* Styles for the close button */
+.popup-close-button {
+    cursor: pointer;
+    padding: 8px;
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.popup-close-button2:hover {
+    background-color: #7E8E98;
+    color: #fff;
+}
+

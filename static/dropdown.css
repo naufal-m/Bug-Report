@@ -1,0 +1,38 @@
+/* Styles for the dropdown (select) element */
+select {
+    width: 99%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Background color of the dropdown */
+    color: #333; /* Text color of the selected option */
+    cursor: pointer;
+}
+
+/* Style for the dropdown when hovered */
+select:hover {
+    border-color: #7E8E98;
+}
+
+/* Style for the dropdown when focused (clicked) */
+select:focus {
+    border-color: #5D6D7E;
+    outline: none; /* Remove the default blue outline */
+}
+
+/* Style for the dropdown arrow (caret) */
+select::-ms-expand {
+    display: none; /* Hide the default arrow in IE10+ */
+}
+
+/* Optional: Style the dropdown options */
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Optional: Style the dropdown options when hovered */
+select option:hover {
+    background-color: #f2f2f2;
+}

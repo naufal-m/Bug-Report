@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Bugs</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_table.css') }}">
+
+</head>
+<body>
+<h1>Bug Lists</h1>
+    <div class="table-container">
+    <table>
+        <tr>
+            <th>Bug ID</th>
+            <th>Description</th>
+            <th>Update</th>
+            <th>Status</th>
+            <th>Create Date</th>
+            <th>Update Date</th>
+        </tr>
+        {% for bug_id, bug_report in bug_report.items() %}
+        <tr>
+            <td>{{ bug_id }}</td>
+            <td>{{ bug_report.Description }}</td>
+            <td>{{ bug_report.Update }}</td>
+            <td>{{ bug_report.Status }}</td>
+            <td>{{ bug_report.Date }}</td>
+            <td>{{ bug_report.Update_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+</body>
+</html>

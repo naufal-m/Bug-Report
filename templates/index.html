@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Report</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form_popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dropdown.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='status_counts.css') }}">
+
+</head>
+<body>
+<h1>Add Issues</h1>
+
+<!-- Add Bug Button - Trigger Popup -->
+<button class="action-button" onclick="openPopup('addBugForm')">Add Bug</button>
+
+<!-- Update Bug Button - Trigger Popup -->
+<button class="action-button" onclick="openPopup('updateBugForm')">Update Bug</button>
+
+<!-- Popup Container -->
+<div id="popupContainer">
+    <!-- Add Bug Popup -->
+    <div id="addBugForm" class="popup">
+
+        <!-- Add Bugs Popup -->
+        <div id="add-bugs-popup" class="popup-container" style="display: none;">
+            <p id="add-bugs-popup-message" class="popup-message"></p>
+            <!-- <button onclick="hideAddBugsPopup()" class="popup-close-button">Close</button> -->
+            <div onclick="hideAddBugsPopup()" class="popup-close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+        </div>
+
+        <h3>Add Bug</h3>
+        <form id="addBugPopup" action="/add_bugs" method="post" onsubmit="return addBugsFormSubmit()">
+            <!-- Add Bug Form Fields ... -->
+            <label for="bug_id">Bug ID:</label>
+            <input type="text" name="bug_id" required>
+            <br>
+            <label for="description">Description:</label>
+            <input type="text" name="description" required>
+            <br>
+            <input type="submit" value="Add Bugs">
+        </form>
+        <button class="close-button" onclick="closePopup('addBugForm')">Close</button>
+    </div>
+
+    <!-- Update Bug Popup -->
+    <div id="updateBugForm" class="popup">
+
+        <!-- Update Bugs Status Popup -->
+        <div id="update-bugs-popup" class="popup-container" style="display: none;">
+            <p id="update-bugs-popup-message" class="popup-message"></p>
+            <div onclick="hideUpdateBugsPopup()" class="popup-close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+        </div>
+
+            <h3>Update Bug</h3>
+            <form id="updateBugPopup" action="/update_bugs" method="post" onsubmit="return updateBugsFormSubmit()">
+                <!-- Update Bug Form Fields ... -->
+                <label for="bug_id">Bug ID:</label>
+                <input type="number" id="bug_id" name="bug_id" required>
+                <br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" disabled>
+                <br>
+                <label for="change">Update:</label>
+                <input type="text" id="change" name="change" required>
+                <br>
+                <div id="statusContainer">
+                    <label for="status">Status:</label>
+                    <br>
+                    <select id="status" name="status" required>
+                        <option value="Open">Open</option>
+                        <option value="In Progress">In progress</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+                    <br>
+                </div>
+                <input type="submit" value="Update Bug Status">
+            </form>
+            <button class="close-button" onclick="closePopup('updateBugForm')">Close</button>
+    </div>
+</div>
+
+    <h2>View Bugs</h2>
+        <form action="/view_bugs" method="get">
+            <input type="submit" value="View Bugs">
+
+            <!-- Display the status counts -->
+            <div class="status-counts">
+                <p><span class="status-label">Open:</span> <span id="openCount" class="status-count open">
+                    {{ status_counts['Open'] }}</span></p>
+                <p><span class="status-label">In Progress:</span>
+                    <span id="inProgressCount" class="status-count in-progress">{{ status_counts['In Progress'] }}
+                    </span></p>
+                <p><span class="status-label">Closed:</span>
+                    <span id="closedCount" class="status-count closed">{{ status_counts['Closed'] }}</span></p>
+            </div>
+
+        </form>
+
+
+    <!-- Add the download button for bug_report.xlsx -->
+    <a href="{{ url_for('download_bug_report') }}" class="download-button">Download Bug Report</a>
+
+<script src="{{ url_for('static', filename='form_popup.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+<script src="{{ url_for('static', filename='auto_populate.js') }}"></script>
+<script src="{{ url_for('static', filename='refresh_page.js') }}"></script>
+
+</body>
+</html>

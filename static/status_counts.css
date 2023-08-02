@@ -1,0 +1,36 @@
+/* Add some spacing and styling to the status count display */
+.status-counts {
+    margin-top: 0px;
+    display: flex; /* Use flexbox to align items in a row */
+    justify-content: space-between; /* Spread items evenly along the row */
+    margin-left: 4px;
+}
+
+.status-counts p {
+    font-size: 13px;
+    margin: 10px 5;
+    flex: 1; /* Allow each status count section to grow and take up equal space */
+}
+
+/* Apply different colors for each status label */
+.status-counts p .status-label {
+    font-weight: bold;
+    margin-right: 10px; /* Add some space between the label and count */
+}
+
+.status-counts p .status-count {
+    font-weight: bold;
+}
+
+/* Status label colors */
+.status-count.open {
+    color: #dc3545; /* Green color for 'Open' */
+}
+
+.status-count.in-progress {
+    color: #007bff; /* Blue color for 'In Progress' */
+}
+
+.status-count.closed {
+    color: #28a745; /* Red color for 'Closed' */
+}
