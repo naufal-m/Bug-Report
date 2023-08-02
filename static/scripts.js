@@ -25,7 +25,9 @@
     function showUpdateBugsPopup(message) {
         const popup = document.getElementById("update-bugs-popup");
         const messageElement = document.getElementById("update-bugs-popup-message");
-        messageElement.textContent = message;
+            console.log('POPUP => ', popup);
+            console.log('MSG EVENT => ', messageElement);
+            console.log('MSG => ', message);
         popup.style.display = "block";
 
         // Clear the input fields after submission
@@ -107,3 +109,27 @@
         document.getElementById('updateButton').disabled = false;
     }
 
+    function openUpdateBugForm(bugId) {
+        const popup = document.getElementById("popupContainer");
+        const messageElement = document.getElementById("update-bugs-popup-message");
+        messageElement.textContent = `Updating Bug ${bugId}`;
+        popup.style.display = "block";
+
+        // Clear the input fields after submission
+        document.getElementById('bug_id').value = bugId;
+
+        // Make an AJAX request to the server to get bug details based on the selected bug ID
+        fetch('/get_bug_details?bug_id=' + bugId)
+      .then(response => response.json())
+      .then(data => {
+        // Populate the form fields with the fetched bug details
+        document.getElementById('description').value = data.Description;
+        document.getElementById('change').value = data.Update;
+
+        // Show the "Status" field
+        document.getElementById('statusContainer').style.display = 'block';
+
+        // Set the "Status" field value based on the fetched data
+        document.getElementById('status').value = data.Status;
+      });
+    }
