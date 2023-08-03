@@ -25,9 +25,9 @@
     function showUpdateBugsPopup(message) {
         const popup = document.getElementById("update-bugs-popup");
         const messageElement = document.getElementById("update-bugs-popup-message");
-            console.log('POPUP => ', popup);
-            console.log('MSG EVENT => ', messageElement);
-            console.log('MSG => ', message);
+//            console.log('POPUP => ', popup);
+//            console.log('MSG EVENT => ', messageElement);
+//            console.log('MSG => ', message);
         popup.style.display = "block";
 
         // Clear the input fields after submission
@@ -67,6 +67,7 @@
           .catch(error => console.error('Error:', error));
         return false; // Prevent form submission
     }
+
 
     function updateBugsFormSubmit() {
         const bugId = document.getElementById('bug_id').value;
@@ -112,7 +113,7 @@
     function openUpdateBugForm(bugId) {
         const popup = document.getElementById("popupContainer");
         const messageElement = document.getElementById("update-bugs-popup-message");
-        messageElement.textContent = `Updating Bug ${bugId}`;
+        messageElement.textContent = `Updating Bug ID ${bugId}`;
         popup.style.display = "block";
 
         // Clear the input fields after submission

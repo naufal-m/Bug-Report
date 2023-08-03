@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 40px;
     background-color: #f2f2f2;
     color: #333333;
 }
@@ -11,12 +11,13 @@ body {
     background-color: #5D6D7E;
     color: #fff;
     border: none;
-    padding: 12px 18px;
+    padding: 10px 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 13px;
     transition: background-color 0.3s ease;
     margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .action-button:hover {
@@ -28,7 +29,7 @@ body {
     background-color: #5D6D7E;
     color: #fff;
     border: none;
-    padding: 12px 18px;
+    padding: 10px 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 13px;
@@ -43,6 +44,10 @@ body {
 /* Specific Styles for the Form */
 h1, h2, h3 {
     text-align: left;
+}
+
+.dashboard_heading {
+    border-bottom: 2px solid #ccc;
 }
 
 form {
@@ -96,7 +101,7 @@ form {
         input[type="submit"] {
             background-color: #5D6D7E;
             color: #fff;
-            padding: 10px 14px;
+            padding: 10px 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;

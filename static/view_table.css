@@ -1,7 +1,14 @@
 h1 {
     font-family: Arial, sans-serif;
-    padding-left: 73px;
+    padding-left: 90px;
     color: #333333
+}
+
+.tablePageHeading {
+    margin-left:60px;
+    margin-top: 50px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 4px;
 }
 
 .table-container {
@@ -38,3 +45,8 @@ table {
         span{
             cursor: pointer;
         }
+
+.view_bug_nav {
+    padding-left: 60px;
+    font-size: 14px;
+}

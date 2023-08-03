@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<h1>Dashboard</h1>
+<h1 class="dashboard_heading">Dashboard</h1>
 
 <!-- Add Bug Button - Trigger Popup -->
 <button class="action-button" onclick="openPopup('addBugForm')">Add Bug</button>
@@ -88,7 +88,7 @@
                     </select>
                     <br>
                 </div>
-                <input type="submit" value="Update Bug Status">
+                <input type="submit" value="Update">
             </form>
             <button class="close-button" onclick="closePopup('updateBugForm')">Close</button>
     </div>
@@ -113,7 +113,7 @@
 
 
     <!-- Add the download button for bug_report.xlsx -->
-    <a href="{{ url_for('download_bug_report') }}" class="download-button">Download Bug Report</a>
+    <a href="{{ url_for('download_bug_report') }}" class="download-button">Export Report</a>
 
 <script src="{{ url_for('static', filename='form_popup.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts.js') }}"></script>

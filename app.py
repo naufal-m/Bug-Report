@@ -26,7 +26,7 @@ def add_bug(bug_report, bug_id, description):
         bug_report[bug_id] = {'Description': description, 'Update': description, 'Status': 'Open', 'Date': created_date,
                                'Update_date': created_date }
         save_bug_report(bug_report)
-        return f"Bug ID {bug_id} added successfully."
+        return f"Bug ID {bug_id} created successfully."
 
 def update_bug_status(bug_report, bug_id, update, status):
     if bug_id not in bug_report:
@@ -97,7 +97,6 @@ def get_bug_details():
         return jsonify(bug_report[bug_id])
     else:
         return jsonify({'error': 'Bug with the provided ID does not exist.'})
-
 
 if __name__ == "__main__":
     app.run(debug=True)

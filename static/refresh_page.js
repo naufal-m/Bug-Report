@@ -1,5 +1,3 @@
-// script.js
-
 // Function to fetch the updated status counts from the server
 function fetchStatusCounts() {
     fetch('/get_status_counts') // Replace with the actual endpoint for getting status counts
@@ -32,6 +30,7 @@ function handleFormSubmit(formId) {
     }, 1000); // Adjust the delay time as needed
 }
 
+
 // Add event listeners to the form submit buttons
 document.getElementById('addBugPopup').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -42,3 +41,5 @@ document.getElementById('updateBugPopup').addEventListener('submit', (event) => 
     event.preventDefault();
     handleFormSubmit('updateBugPopup');
 });
+
+

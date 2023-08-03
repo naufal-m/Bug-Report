@@ -11,13 +11,20 @@
 
 </head>
 <body>
-<h1>Bug Lists</h1>
+
+<nav class="view_bug_nav">
+    <!-- Breadcrumbs -->
+    <a href="{{ url_for('index') }}">Home</a> / View Bugs
+</nav>
+
+
+<h1 class="tablePageHeading">Bug Lists</h1>
     <div class="table-container">
     <table>
         <tr>
             <th>Bug ID</th>
             <th>Description</th>
-            <th>Update</th>
+            <th>Test Result</th>
             <th>Status</th>
             <th>Create Date</th>
             <th>Update Date</th>
@@ -76,7 +83,7 @@
                     </select>
                     <br>
                 </div>
-                <input type="submit" value="Update Bug Status">
+                <input type="submit" value="Update Bug">
             </form>
             <button class="close-button" onclick="closePopup('updateBugForm')">Close</button>
     </div>
@@ -85,7 +92,7 @@
 <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 <script src="{{ url_for('static', filename='auto_populate.js') }}"></script>
 <script src="{{ url_for('static', filename='form_popup.js') }}"></script>
-<script src="{{ url_for('static', filename='refresh_page.js') }}"></script>
+<script src="{{ url_for('static', filename='table_auto_refresh.js') }}"></script>
 
 </body>
 </html>
