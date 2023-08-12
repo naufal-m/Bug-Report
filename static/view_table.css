@@ -4,16 +4,26 @@ h1 {
     color: #333333
 }
 
+/*
 .tablePageHeading {
     margin-left:60px;
-    margin-top: 50px;
+    margin-top: 25px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 4px;
+}
+*/
+
+.tablePageHeading {
+     margin-left:60px;
+     margin-bottom: 20px;
 }
 
 .table-container {
     margin: 0 auto; /* This will center the table horizontally */
     width: 90%; /* Adjust the width as needed */
+    max-height: 400px;
+    overflow: auto;
+    padding-right: 2px;
 }
 
 table {
@@ -47,6 +57,31 @@ table {
         }
 
 .view_bug_nav {
-    padding-left: 60px;
+    padding-left: 10px;
     font-size: 14px;
+    margin-bottom: 16px;
+    margin-left: 60px;
+    margin-top: 25px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 4px
 }
+
+.table-container table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table-container th {
+        position: sticky;
+        top: 0;
+    }
+
+ /* Customizing the scrollbar for WebKit-based browsers (e.g., Chrome, Safari) */
+    .table-container::-webkit-scrollbar {
+        width: 5px; /* Adjust the width as per your preference */
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+        background-color: #888; /* Color of the scrollbar thumb */
+        border-radius: 2px; /* Rounded corners for the scrollbar thumb */
+    }

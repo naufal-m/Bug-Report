@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='form_popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='dropdown.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='status_filter.css') }}">
 
 </head>
 <body>
@@ -17,31 +18,49 @@
     <a href="{{ url_for('index') }}">Home</a> / View Bugs
 </nav>
 
+<div id="filter-container" class="filter-container">
+  <label for="filter-status">Filter by Status:</label>
+  <select id="filter-status">
+    <option value="">All</option>
+    <option value="Open">Open</option>
+    <option value="In Progress">In progress</option>
+    <option value="Closed">Closed</option>
+  </select>
+</div>
 
 <h1 class="tablePageHeading">Bug Lists</h1>
     <div class="table-container">
-    <table>
-        <tr>
-            <th>Bug ID</th>
-            <th>Description</th>
-            <th>Test Result</th>
-            <th>Status</th>
-            <th>Create Date</th>
-            <th>Update Date</th>
-        </tr>
-        {% for bug_id, bug_report in bug_report.items() %}
-        <tr>
-            <td>
-                <span onclick="openUpdateBugForm('{{ bug_id }}')">{{ bug_id }}</span>
-            </td>
-            <td>{{ bug_report.Description }}</td>
-            <td>{{ bug_report.Update }}</td>
-            <td>{{ bug_report.Status }}</td>
-            <td>{{ bug_report.Date }}</td>
-            <td>{{ bug_report.Update_date }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+        <div class="table-wrapper">
+
+            <table id="bug-table">
+                <tr>
+                    <th>Bug ID</th>
+                    <th>Description</th>
+                    <th>Test Result</th>
+                    <th>Status</th>
+                    <th>Create Date</th>
+                    <th>Update Date</th>
+                </tr>
+                <tbody>
+                    <tr id="no-records-row" style="display: none;">
+                        <td colspan="6">No records found.</td>
+                    </tr>
+
+                    {% for bug_id, bug_report in bug_report.items() %}
+                <tr>
+                    <td>
+                        <span onclick="openUpdateBugForm('{{ bug_id }}')">{{ bug_id }}</span>
+                    </td>
+                    <td>{{ bug_report.Description }}</td>
+                    <td>{{ bug_report.Update }}</td>
+                    <td>{{ bug_report.Status }}</td>
+                    <td>{{ bug_report.Date }}</td>
+                    <td>{{ bug_report.Update_date }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 
 <!-- Popup Container -->
@@ -93,6 +112,7 @@
 <script src="{{ url_for('static', filename='auto_populate.js') }}"></script>
 <script src="{{ url_for('static', filename='form_popup.js') }}"></script>
 <script src="{{ url_for('static', filename='table_auto_refresh.js') }}"></script>
+<script src="{{ url_for('static', filename='table_filter.js') }}"></script>
 
 </body>
 </html>

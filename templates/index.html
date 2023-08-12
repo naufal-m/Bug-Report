@@ -14,10 +14,15 @@
 <h1 class="dashboard_heading">Dashboard</h1>
 
 <!-- Add Bug Button - Trigger Popup -->
-<button class="action-button" onclick="openPopup('addBugForm')">Add Bug</button>
+<!-- <button class="action-button" onclick="openPopup('addBugForm')">Add Bug</button> -->
+<a class="action-button" href="javascript:void(0);" onclick="openPopup('addBugForm')">Add Bug</a>
 
 <!-- Update Bug Button - Trigger Popup -->
-<button class="action-button" onclick="openPopup('updateBugForm')">Update Bug</button>
+<!-- <button class="action-button" onclick="openPopup('updateBugForm')">Update Bug</button> -->
+<a class="action-button" href="javascript:void(0);" onclick="openPopup('updateBugForm')">Update Bug</a>
+
+ <!-- Add the download button for bug_report.xlsx -->
+<a href="{{ url_for('download_bug_report') }}" class="download-button">Export Report</a>
 
 <!-- Popup Container -->
 <div id="popupContainer">
@@ -94,7 +99,7 @@
     </div>
 </div>
 
-    <h2>View Bugs</h2>
+    <!-- <h2>View Bugs</h2> -->
         <form action="/view_bugs" method="get">
             <input type="submit" value="View Bugs">
 
@@ -108,17 +113,15 @@
                 <p><span class="status-label">Closed:</span>
                     <span id="closedCount" class="status-count closed">{{ status_counts['Closed'] }}</span></p>
             </div>
-
         </form>
 
 
-    <!-- Add the download button for bug_report.xlsx -->
-    <a href="{{ url_for('download_bug_report') }}" class="download-button">Export Report</a>
 
 <script src="{{ url_for('static', filename='form_popup.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 <script src="{{ url_for('static', filename='auto_populate.js') }}"></script>
 <script src="{{ url_for('static', filename='refresh_page.js') }}"></script>
+<script src="{{ url_for('static', filename='status_chart.js') }}"></script>
 
 </body>
 </html>

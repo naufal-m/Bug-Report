@@ -59,3 +59,8 @@
     margin-left: 10px;
     cursor:pointer;
 }
+
+.close-button:hover {
+    background-color: #7E8E98;
+    color: black;
+}

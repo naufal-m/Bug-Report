@@ -1,0 +1,11 @@
+.filter-container {
+    width: 90%;
+    padding: 30px 7px 7px 5px;
+    margin-bottom: 0px;
+    /* border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; */
+    color: #333;
+    cursor: pointer;
+    margin-left: 70px;
+}

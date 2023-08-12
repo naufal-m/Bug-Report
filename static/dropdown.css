@@ -1,9 +1,9 @@
 /* Styles for the dropdown (select) element */
 select {
-    width: 99%;
-    padding: 8px;
+    width: 10%;
+    padding: 6px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #fff; /* Background color of the dropdown */
     color: #333; /* Text color of the selected option */
