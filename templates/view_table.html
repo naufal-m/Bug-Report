@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='dropdown.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='status_filter.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 </head>
 <body>
@@ -48,8 +50,12 @@
 
                     {% for bug_id, bug_report in bug_report.items() %}
                 <tr>
-                    <td>
-                        <span onclick="openUpdateBugForm('{{ bug_id }}')">{{ bug_id }}</span>
+                    <td onmouseover="showDeleteIcon(this)" onmouseout="hideDeleteIcon(this)">
+                        <!-- <span onclick="openUpdateBugForm('{{ bug_id }}')">{{ bug_id }}</span> -->
+                        <span class="bug-id" data-id="{{ bug_id }}" onclick="openUpdateBugForm('{{ bug_id }}')">
+                            {{ bug_id }}</span>
+                        <span class="delete-icon" onclick="deleteBug('{{ bug_id }}')"><i class="fas fa-trash"></i>
+                        </span>
                     </td>
                     <td>{{ bug_report.Description }}</td>
                     <td>{{ bug_report.Update }}</td>

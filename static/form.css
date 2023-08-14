@@ -48,6 +48,7 @@ body {
 /* Specific Styles for the Form */
 h1, h2, h3 {
     text-align: left;
+    margin-left: 12px;
 }
 
 .dashboard_heading {

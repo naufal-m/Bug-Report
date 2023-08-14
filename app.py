@@ -39,6 +39,14 @@ def update_bug_status(bug_report, bug_id, update, status):
         save_bug_report(bug_report)
         return f"Successfully updated bug ID {bug_id} and status changed to '{status}'."
 
+def delete_bug(bug_report, bug_id):
+    if bug_id in bug_report:
+        del bug_report[bug_id]
+        save_bug_report(bug_report)
+        return f"Bug ID {bug_id} deleted successfully."
+    else:
+        return f"Bug with ID {bug_id} does not exist."
+
 def view_bugs(bug_report):
     return bug_report
 
@@ -76,6 +84,12 @@ def update_bugs_route():
 
     message = update_bug_status(bug_report, bug_id, change, status)
     return message
+
+@app.route('/delete_bug/<int:bug_id>', methods=['DELETE'])
+def delete_bug_route(bug_id):
+    bug_report = load_bug_report()
+    message = delete_bug(bug_report, bug_id)
+    return jsonify({'message': message})
 
 @app.route('/view_bugs', methods=['GET'])
 def view_bugs_route():

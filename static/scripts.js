@@ -134,3 +134,40 @@
         document.getElementById('status').value = data.Status;
       });
     }
+
+    function showDeleteIcon(element) {
+
+    const deleteIcon = element.querySelector(".delete-icon");
+    console.log(deleteIcon);
+    if (deleteIcon) {
+        deleteIcon.style.display = 'inline-block';
+//        document.getElementsByClassName(deleteIcon).style.display = 'inline-block';
+    }
+    }
+
+    function hideDeleteIcon(element) {
+    console.log("hideDeleteIcon called");
+    const deleteIcon = element.querySelector('.delete-icon');
+    if (deleteIcon) {
+        deleteIcon.style.display = 'none';
+    }
+    }
+
+function deleteBug(bug_id) {
+    if (confirm("Are you sure you want to delete Bug ID " + bug_id + " ?")) {
+        fetch(`/delete_bug/${bug_id}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+            // Optionally, you can remove the row from the table if the deletion was successful
+            const row = document.querySelector(`.bug-id[data-id="${bug_id}"]`).parentNode.parentNode;
+            row.remove();
+            location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+}

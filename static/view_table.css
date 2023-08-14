@@ -85,3 +85,18 @@ table {
         background-color: #888; /* Color of the scrollbar thumb */
         border-radius: 2px; /* Rounded corners for the scrollbar thumb */
     }
+
+.delete-icon {
+    display: none;
+}
+
+.bug-id,
+.delete-icon {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.delete-icon{
+    float: right;
+}
